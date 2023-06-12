@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: permitted-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  project: default
+  source:
+    path: helm-guestbook
+    repoURL: https://github.com/denis-codefresh/argocd-example-apps.git
+    targetRevision: HEAD
+  destination:
+    name: arn-aws-eks-us-east-1-882458141806-cluster-denis
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=false
+      - ApplyOutOfSyncOnly=false
