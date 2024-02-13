@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook-with-version
+  name: guestbook-with-version-dev
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
   labels:
@@ -11,10 +11,10 @@ spec:
   source:
     path: helm-guestbook
     repoURL: https://github.com/denis-codefresh/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: version-dev
   destination:
     name: in-cluster
-    namespace: default
+    namespace: version-dev
   syncPolicy:
     automated:
       prune: false
@@ -25,7 +25,7 @@ spec:
       - Replace=false
       - PruneLast=false
       - Validate=true
-      - CreateNamespace=false
+      - CreateNamespace=true
       - ApplyOutOfSyncOnly=false
       - ServerSideApply=true
       - RespectIgnoreDifferences=false

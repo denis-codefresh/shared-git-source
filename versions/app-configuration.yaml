@@ -8,7 +8,11 @@ spec:
   applicationSourceSelector:
     matchLabels:
       app: app-under-version-test
-  priority: 10
+  priority: 0
   versionSource:
     file: "values.yaml"
     jsonPath: "{.image.tag}"
+  promotion:
+    values.yaml:
+      jsonPaths:
+        - "{.image.tag}"
