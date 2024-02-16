@@ -3,6 +3,7 @@
 # metadata:
 #   generateName: workflow-template-hello-world-
 # spec:
+#   serviceAccountName: argo-workflow-controller
 #   entrypoint: whalesay
 #   templates:
 #   - name: whalesay
