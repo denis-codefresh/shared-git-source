@@ -1,0 +1,119 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: promotionpolicies.csdp.codefresh.io
+spec:
+  conversion:
+    strategy: None
+  group: csdp.codefresh.io
+  names:
+    kind: PromotionPolicy
+    listKind: PromotionPolicyList
+    plural: promotionpolicies
+    singular: promotionpolicy
+    shortNames:
+    - pp
+  scope: Namespaced
+  versions:
+  - name: v1
+    # additionalPrinterColumns:
+    # - jsonPath: .metadata.name
+    #   name: Sync Status
+    #   priority: 10
+    #   type: string
+    schema:
+      openAPIV3Schema:
+        type: object
+        required:
+        - metadata
+        - spec
+        description: PromotionPolicy is a definition of PromotionPolicy resource.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            type: object
+            description: PromotionPolicy defines the desired state of PromotionPolicy. Contains a single promotion policy rule.
+            required:
+            - priority
+            properties:
+              productSelector:
+                type: object
+                description: Product selector. If not specified, the promotion policy will be applied to all products.
+                properties:
+                  names:
+                    type: array
+                    description: List of product names.
+                    items:
+                      description: Product name.
+                      type: string
+                  tags:
+                    type: array
+                    description: List of product tags.
+                    items:
+                      type: string
+                      description: Product tag.
+              targetEnvironmentSelector:
+                type: object
+                description: Target environment selector. If not specified, the promotion policy will be applied to all target environments.
+                properties:
+                  names:
+                    type: array
+                    description: List of target environment names.
+                    items:
+                      description: Target environment name.
+                      type: string
+                  types:
+                    type: array
+                    description: List of target environment types.
+                    items:
+                      type: string
+                      description: Target environment type.
+                  tags:
+                    type: array
+                    description: List of target environment tags.
+                    items:
+                      type: string
+                      description: Target environment tag.
+              action:
+                description: Action to be performed on the promotion, possible values are 'commit', 'pr', 'user', 'none'.
+                type: string
+                enum:
+                  - commit
+                  - pr
+                  - user
+                  - none
+              workflows:
+                type: object
+                description: Configuration of the promotion policy workflows.
+                properties:
+                  post:
+                    description: List of promotion workflows that are executed after the promotion is completed.
+                    type: array
+                    items:
+                      type: string
+                      description: Name of the promotion workflow.
+                  pre:
+                    type: array
+                    description: List of promotion workflows (names) that are executed before the promotion is started.
+                    items:
+                      type: string
+                      description: Name of the promotion workflow.
+              priority:
+                format: int64
+                type: integer
+                description: Priority of the promotion policy. Promotion policies with higher priority will be evaluated first.
+    served: true
+    storage: true
+    subresources:
+      status: {}
