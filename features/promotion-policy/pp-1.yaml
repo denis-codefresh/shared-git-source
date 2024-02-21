@@ -1,31 +1,32 @@
-apiVersion: csdp.codefresh.io/v1
-kind: PromotionPolicy
-metadata:
-  name: pp1
-spec:
-  priority: 0
-  productSelector:
-    names:
-    - p1
-    - p2
-    tags:
-    - t1
-    - t2
-  targetEnvironmentSelector:
-    names:
-    - e1
-    - e2
-    types:
-    - t1
-    - t2
-    tags:
-    - t1
-    - t2
-  action: commit
-  workflows:
-    pre:
-      - promotion-wf-1
-      - promotion-wf-2
-    post:
-      - promotion-wf-3
-      - promotion-wf-4
+# apiVersion: csdp.codefresh.io/v1
+# kind: PromotionPolicy
+# metadata:
+#   name: pp1
+# spec:
+#   priority: 0
+#   selector:
+#     product:
+#       names:
+#       - p1
+#       - p2
+#       tags:
+#       - t1
+#       - t2
+#     targetEnvironment:
+#       names:
+#       - e1
+#       - e2
+#       types:
+#       - t1
+#       - t2
+#       tags:
+#       - t1
+#       - t2
+#   policy:
+#     action: commit
+#     preAction:
+#       - promotion-wf-1
+#       - promotion-wf-2
+#     postAction:
+#       - promotion-wf-3
+#       - promotion-wf-4
