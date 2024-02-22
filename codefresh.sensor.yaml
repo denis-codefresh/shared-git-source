@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: codefresh
+spec:
+  template:
+    serviceAccountName: argo-server
+  eventBusName: codefresh-eventbus
+  dependencies:
+    - name: github-21be8970-e42e-4572-90a4-21207840332c
+      eventName: github-21be8970-e42e-4572-90a4-21207840332c
+      eventSourceName: codefresh
+      filters:
+        data:
+          - path: body.X-GitHub-Event
+            value:
+              - push
+            type: string
+          - path: body.ref
+            template: '{{ (split "/" .Input)._1 }}'
+            value:
+              - heads
+            type: string
+  triggers:
+    - template:
+        name: ci
+        conditions: github-21be8970-e42e-4572-90a4-21207840332c
+        argoWorkflow:
+          operation: submit
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: WorkflowTemplate
+              metadata:
+                generateName: codefresh-ci-
+              spec:
+                workflowTemplateRef:
+                  name: hello-world
+          parameters: []
