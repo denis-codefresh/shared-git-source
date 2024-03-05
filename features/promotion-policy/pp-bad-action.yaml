@@ -1,0 +1,15 @@
+apiVersion: csdp.codefresh.io/v1
+kind: PromotionPolicy
+metadata:
+  name: pp-action-pr
+spec:
+  priority: 0
+  selector:
+    product:
+      names:
+      - p1
+      - p2
+  policy:
+    action: bad
+    preAction: promotion-wf-1
+    postAction: promotion-wf-3
