@@ -1,7 +1,7 @@
 apiVersion: csdp.codefresh.io/v1
 kind: PromotionPolicy
 metadata:
-  name: pp-action-pr
+  name: pp-action-bad
 spec:
   priority: 0
   selector:
