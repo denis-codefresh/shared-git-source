@@ -1,0 +1,18 @@
+# apiVersion: csdp.codefresh.io/v1
+# kind: PromotionPolicy
+# metadata:
+#   name: example-pp
+# spec:
+#   priority: 0
+#   selector:
+#     product:
+#       names:
+#       - productA
+#       - productB
+#     targetEnvironment:
+#       types:
+#       - PRODUCTION
+#   policy:
+#     action: commit
+#     preAction: pre-validation-wf
+#     postAction: post-validation-wf
