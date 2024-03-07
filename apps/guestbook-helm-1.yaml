@@ -1,0 +1,28 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-helm-1
+spec:
+  project: default
+  source:
+    path: helm-guestbook
+    repoURL: https://github.com/denis-codefresh/argocd-example-apps.git
+    targetRevision: main
+  destination:
+    name: in-cluster
+    namespace: guestbook-helm
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
