@@ -1,18 +1,18 @@
-# apiVersion: csdp.codefresh.io/v1
-# kind: PromotionPolicy
-# metadata:
-#   name: pp-invalid-types
-# spec:
-#   priority: 0
-#   selector:
-#     targetEnvironment:
-#       names:
-#       - e1
-#       - e2
-#       types:
-#       - a
-#       - b
-#   policy:
-#     action: commit
-#     preAction: promotion-wf-1
-#     postAction: promotion-wf-3
+apiVersion: csdp.codefresh.io/v1
+kind: PromotionPolicy
+metadata:
+  name: pp-invalid-types
+spec:
+  priority: 0
+  selector:
+    targetEnvironment:
+      names:
+      - e1
+      - e2
+      types:
+      - a
+      - b
+  policy:
+    action: commit
+    preAction: promotion-wf-1
+    postAction: promotion-wf-3
