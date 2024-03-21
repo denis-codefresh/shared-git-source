@@ -16,11 +16,6 @@
 #   scope: Namespaced
 #   versions:
 #   - name: v1
-#     # additionalPrinterColumns:
-#     # - jsonPath: .metadata.name
-#     #   name: Sync Status
-#     #   priority: 10
-#     #   type: string
 #     schema:
 #       openAPIV3Schema:
 #         type: object

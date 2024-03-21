@@ -1,7 +1,7 @@
 apiVersion: csdp.codefresh.io/v1
 kind: PromotionPolicy
 metadata:
-  name: pp1
+  name: pp-all-values
 spec:
   priority: 0
   selector:
@@ -17,8 +17,8 @@ spec:
       - e1
       - e2
       types:
-      - t1
-      - t2
+      - PROD
+      - NON_PROD
       tags:
       - t1
       - t2
