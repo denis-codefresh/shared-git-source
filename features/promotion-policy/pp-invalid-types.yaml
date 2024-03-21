@@ -3,7 +3,7 @@ kind: PromotionPolicy
 metadata:
   name: pp-invalid-types
 spec:
-  priority: 0
+  priority: 5
   selector:
     targetEnvironment:
       names:
