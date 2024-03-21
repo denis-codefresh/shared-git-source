@@ -3,7 +3,7 @@ kind: PromotionPolicy
 metadata:
   name: pp-all-values
 spec:
-  priority: 0
+  priority: 2
   selector:
     product:
       names:

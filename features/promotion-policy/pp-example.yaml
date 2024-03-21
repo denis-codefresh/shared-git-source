@@ -3,7 +3,7 @@
 # metadata:
 #   name: example-pp
 # spec:
-#   priority: 0
+#   priority: 4
 #   selector:
 #     product:
 #       names:
