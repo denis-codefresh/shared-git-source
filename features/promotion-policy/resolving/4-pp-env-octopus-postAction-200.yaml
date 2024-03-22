@@ -5,7 +5,7 @@ metadata:
 spec:
   priority: 200
   selector:
-    target:
+    targetEnvironment:
       names:
       - octopus-demo
   policy:

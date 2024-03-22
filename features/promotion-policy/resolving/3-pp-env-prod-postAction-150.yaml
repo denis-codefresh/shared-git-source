@@ -5,7 +5,7 @@ metadata:
 spec:
   priority: 150
   selector:
-    target:
+    targetEnvironment:
       types:
       - PROD
   policy:
