@@ -1,7 +1,7 @@
 apiVersion: csdp.codefresh.io/v1
 kind: PromotionPolicy
 metadata:
-  name: env-octopus-postAction-200
+  name: env-octopus-postaction-200
 spec:
   priority: 200
   selector:

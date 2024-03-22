@@ -1,7 +1,7 @@
 apiVersion: csdp.codefresh.io/v1
 kind: PromotionPolicy
 metadata:
-  name: env-prod-postAction-150
+  name: env-prod-postaction-150
 spec:
   priority: 150
   selector:

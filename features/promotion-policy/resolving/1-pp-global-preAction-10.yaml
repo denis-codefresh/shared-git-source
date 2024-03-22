@@ -1,7 +1,7 @@
 apiVersion: csdp.codefresh.io/v1
 kind: PromotionPolicy
 metadata:
-  name: global-preAction-10
+  name: global-preaction-10
 spec:
   priority: 10
   policy:
