@@ -5,4 +5,4 @@ metadata:
 spec:
   priority: 100
   policy:
-    action: global-action
+    action: commit
