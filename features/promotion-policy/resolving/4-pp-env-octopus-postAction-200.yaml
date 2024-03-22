@@ -1,0 +1,12 @@
+apiVersion: csdp.codefresh.io/v1
+kind: PromotionPolicy
+metadata:
+  name: env-octopus-postAction-200
+spec:
+  priority: 200
+  selector:
+    target:
+      names:
+      - octopus-demo
+  policy:
+    postAction: octopus-post-checks

@@ -1,0 +1,8 @@
+apiVersion: csdp.codefresh.io/v1
+kind: PromotionPolicy
+metadata:
+  name: global-action-100
+spec:
+  priority: 100
+  policy:
+    action: global-action
