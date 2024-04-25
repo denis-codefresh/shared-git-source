@@ -1,0 +1,34 @@
+{{- range $index, $app := .Values.applications }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app.Name | quote }}
+  labels:
+{{- with $.Values.promotionTemplate.matchLabels }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+  project: default
+  source:
+{{- with $app.source }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+  destination:
+    name: in-cluster
+    namespace: {{ $app.Name }}
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
+---
+{{- end }}

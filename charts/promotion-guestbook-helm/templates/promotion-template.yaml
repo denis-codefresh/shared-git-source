@@ -1,0 +1,21 @@
+apiVersion: codefresh.io/v1beta1
+kind: ApplicationConfiguration
+metadata:
+  name: {{ .Values.promotionTemplate.name }}
+  labels:
+    app: app-under-version-test
+spec:
+  applicationSourceSelector:
+    matchLabels:
+{{- with .Values.promotionTemplate.matchLabels }}
+{{ toYaml . | indent 6 }}
+{{- end }}
+  priority: 0
+  versionSource:
+    file: "values.yaml"
+    jsonPath: "{.image.tag}"
+  promotion:
+    values.yaml:
+      jsonPaths:
+        - $.image.tag
+		
