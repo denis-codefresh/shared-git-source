@@ -1,5 +1,5 @@
 # apiVersion: codefresh.io/v1beta1
-# kind: ApplicationConfiguration
+# kind: PromotionTemplate
 # metadata:
 #   name: app-config
 #   labels:
