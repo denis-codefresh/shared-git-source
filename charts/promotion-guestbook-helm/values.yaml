@@ -3,6 +3,8 @@ promotionTemplate:
   matchLabels:
     app: guestbook
 
+# create branches in deniscodefresh/argocd-example-apps
+# cd /Users/melden/projects/tmp/argocd-example-apps; git checkout master; for branch in guestbook-{dev,pre-prod,prod}; do git checkout -b $branch; done; git push origin --all
 applications:
   - name: guestbook-dev
     source:
