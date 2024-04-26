@@ -1,6 +1,7 @@
 promotionTemplate:
   name: guestbook
   matchLabels:
+    # also attaching labels to each application + creates product based on the label
     codefresh.io/product: guestbook
 
 # create branches in deniscodefresh/argocd-example-apps
