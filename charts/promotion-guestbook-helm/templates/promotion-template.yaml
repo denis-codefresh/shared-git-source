@@ -2,8 +2,6 @@ apiVersion: codefresh.io/v1beta1
 kind: PromotionTemplate
 metadata:
   name: {{ .Values.promotionTemplate.name }}
-  labels:
-    app: app-under-version-test
 spec:
   applicationSourceSelector:
     matchLabels:
@@ -18,4 +16,3 @@ spec:
     values.yaml:
       jsonPaths:
         - $.image.tag
-		

@@ -1,15 +1,15 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionPolicy
-metadata:
-  name: pp-action-none
-spec:
-  priority: 0
-  selector:
-    product:
-      names:
-      - p1
-      - p2
-  policy:
-    action: none
-    preAction: promotion-wf-1
-    postAction: promotion-wf-3
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionPolicy
+# metadata:
+#   name: pp-action-none
+# spec:
+#   priority: 0
+#   selector:
+#     product:
+#       names:
+#       - p1
+#       - p2
+#   policy:
+#     action: none
+#     preAction: promotion-wf-1
+#     postAction: promotion-wf-3

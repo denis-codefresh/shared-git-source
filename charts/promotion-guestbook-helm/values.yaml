@@ -1,7 +1,7 @@
 promotionTemplate:
   name: guestbook
   matchLabels:
-    app: guestbook
+    codefresh.io/product: guestbook
 
 # create branches in deniscodefresh/argocd-example-apps
 # cd /Users/melden/projects/tmp/argocd-example-apps; git checkout master; for branch in guestbook-{dev,pre-prod,prod}; do git checkout -b $branch; done; git push origin --all
@@ -21,3 +21,26 @@ applications:
       path: helm-guestbook
       repoURL: https://github.com/denis-codefresh/argocd-example-apps.git
       targetRevision: guestbook-prod
+
+promotionPolicies:
+  - name: global
+    policy:
+      action: commit
+  - name: guestbook
+    selector:
+      product:
+        names: ['guestbook']
+    policy:
+      preAction: guestbook-pre-echo
+  - name: prod
+    selector:
+      targetEnvironment:
+        types: ['PROD']
+    policy:
+      postAction: prod-post-echo
+  - name: non-prod
+    selector:
+      targetEnvironment:
+        types: ['NON_PROD']
+    policy:
+      postAction: non-prod-post-echo

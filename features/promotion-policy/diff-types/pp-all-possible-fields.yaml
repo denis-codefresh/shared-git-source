@@ -1,28 +1,28 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionPolicy
-metadata:
-  name: pp-all-values
-spec:
-  priority: 2
-  selector:
-    product:
-      names:
-      - p1
-      - p2
-      tags:
-      - t1
-      - t2
-    targetEnvironment:
-      names:
-      - e1
-      - e2
-      types:
-      - PROD
-      - NON_PROD
-      tags:
-      - t1
-      - t2
-  policy:
-    action: commit
-    preAction: promotion-wf-1
-    postAction: promotion-wf-3
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionPolicy
+# metadata:
+#   name: pp-all-values
+# spec:
+#   priority: 2
+#   selector:
+#     product:
+#       names:
+#       - p1
+#       - p2
+#       tags:
+#       - t1
+#       - t2
+#     targetEnvironment:
+#       names:
+#       - e1
+#       - e2
+#       types:
+#       - PROD
+#       - NON_PROD
+#       tags:
+#       - t1
+#       - t2
+#   policy:
+#     action: commit
+#     preAction: promotion-wf-1
+#     postAction: promotion-wf-3

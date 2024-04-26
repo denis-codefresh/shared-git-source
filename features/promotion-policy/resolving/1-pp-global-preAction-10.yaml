@@ -1,8 +1,8 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionPolicy
-metadata:
-  name: global-preaction-10
-spec:
-  priority: 10
-  policy:
-    preAction: global-pre-action
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionPolicy
+# metadata:
+#   name: global-preaction-10
+# spec:
+#   priority: 10
+#   policy:
+#     preAction: global-pre-action

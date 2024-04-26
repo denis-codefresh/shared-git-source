@@ -1,12 +1,12 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionPolicy
-metadata:
-  name: env-prod-postaction-150
-spec:
-  priority: 150
-  selector:
-    targetEnvironment:
-      types:
-      - PROD
-  policy:
-    postAction: prod-post-checks
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionPolicy
+# metadata:
+#   name: env-prod-postaction-150
+# spec:
+#   priority: 150
+#   selector:
+#     targetEnvironment:
+#       types:
+#       - PROD
+#   policy:
+#     postAction: prod-post-checks

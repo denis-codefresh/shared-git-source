@@ -1,8 +1,8 @@
-apiVersion: codefresh.io/v1beta1
-kind: PromotionPolicy
-metadata:
-  name: global-action-100
-spec:
-  priority: 100
-  policy:
-    action: commit
+# apiVersion: codefresh.io/v1beta1
+# kind: PromotionPolicy
+# metadata:
+#   name: global-action-100
+# spec:
+#   priority: 100
+#   policy:
+#     action: commit

@@ -1,0 +1,17 @@
+{{- range $index, $pp := .Values.promotionPolicies }}
+apiVersion: codefresh.io/v1beta1
+kind: PromotionPolicy
+metadata:
+  name: {{ $pp.name }}
+spec:
+  priority: {{ $pp.priority | default 0 }} 
+  selector:
+{{- with $pp.selector }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+  policy:
+{{- with $pp.policy }}
+{{ toYaml . | indent 4 }}
+{{- end }}
+---
+{{- end }}
