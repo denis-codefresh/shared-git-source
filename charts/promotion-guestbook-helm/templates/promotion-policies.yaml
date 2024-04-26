@@ -5,9 +5,11 @@ metadata:
   name: {{ $pp.name }}
 spec:
   priority: {{ $pp.priority | default 0 }} 
+{{- if $pp.selector }}
   selector:
 {{- with $pp.selector }}
 {{ toYaml . | indent 4 }}
+{{- end }}
 {{- end }}
   policy:
 {{- with $pp.policy }}
