@@ -1,29 +1,29 @@
-# guestbook-dev, guestbook-pre-prod, guestbook-prod
+# dev, pre-prod, prod
 
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: promotion-guestbook
-# spec:
-#   project: default
-#   source:
-#     path: charts/promotion-guestbook-helm
-#     repoURL: https://github.com/denis-codefresh/shared-git-source.git
-#     targetRevision: main
-#   destination:
-#     name: in-cluster
-#     namespace: codefresh
-#   syncPolicy:
-#     automated:
-#       prune: false
-#       selfHeal: false
-#       allowEmpty: false
-#     syncOptions:
-#       - PrunePropagationPolicy=foreground
-#       - Replace=false
-#       - PruneLast=false
-#       - Validate=true
-#       - CreateNamespace=true
-#       - ApplyOutOfSyncOnly=false
-#       - ServerSideApply=true
-#       - RespectIgnoreDifferences=false
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: promotion-guestbook
+spec:
+  project: default
+  source:
+    path: charts/promotion-guestbook-helm
+    repoURL: https://github.com/denis-codefresh/shared-git-source.git
+    targetRevision: main
+  destination:
+    name: in-cluster
+    namespace: codefresh
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false

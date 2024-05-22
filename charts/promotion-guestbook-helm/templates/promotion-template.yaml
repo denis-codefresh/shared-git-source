@@ -1,13 +1,11 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionTemplate
 metadata:
-  name: {{ .Values.promotionTemplate.name }}
+  name: promotion-guestbook-helm
 spec:
   applicationSourceSelector:
     matchLabels:
-{{- with .Values.promotionTemplate.matchLabels }}
-{{ toYaml . | indent 6 }}
-{{- end }}
+      codefresh.io/product: {{ .Values.product.name }}
   priority: 0
   versionSource:
     file: values.yaml

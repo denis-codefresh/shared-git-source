@@ -4,9 +4,7 @@ kind: Application
 metadata:
   name: {{ $app.name }}
   labels:
-{{- with $.Values.promotionTemplate.matchLabels }}
-{{ toYaml . | indent 4 }}
-{{- end }}
+    codefresh.io/product: {{ $.Values.product.name }}
 spec:
   project: default
   source:

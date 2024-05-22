@@ -1,8 +1,6 @@
-promotionTemplate:
+product:
   name: guestbook
-  matchLabels:
-    # also attaching labels to each application + creates product based on the label
-    codefresh.io/product: guestbook
+  promotionFlow: pre-prod-to-prod
 
 # create branches in deniscodefresh/argocd-example-apps
 # cd /Users/melden/projects/tmp/argocd-example-apps; git checkout master; for branch in guestbook-{dev,pre-prod,prod}; do git checkout -b $branch; done; git push origin --all
