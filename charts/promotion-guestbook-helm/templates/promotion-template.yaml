@@ -4,8 +4,9 @@ metadata:
   name: promotion-guestbook-helm
 spec:
   applicationSourceSelector:
-    matchLabels:
-      codefresh.io/product: {{ .Values.product.name }}
+    matchExpressions:
+      - key: app.kubernetes.io/instance
+        operator: Exists
   priority: 0
   versionSource:
     file: values.yaml
