@@ -10,6 +10,9 @@ spec:
     path: charts/promotion-guestbook-helm
     repoURL: https://github.com/denis-codefresh/shared-git-source.git
     targetRevision: main
+    helm:
+      valueFiles:
+        - features/promotion-flow/values.yaml
   destination:
     name: in-cluster
     namespace: codefresh
