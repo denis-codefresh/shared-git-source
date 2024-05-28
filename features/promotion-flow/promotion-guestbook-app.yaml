@@ -12,7 +12,7 @@ spec:
     targetRevision: main
     helm:
       valueFiles:
-        - features/promotion-flow/values.yaml
+        - values-override.yaml
   destination:
     name: in-cluster
     namespace: codefresh
