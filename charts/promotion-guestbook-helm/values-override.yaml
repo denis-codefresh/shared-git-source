@@ -14,6 +14,7 @@ promotionPolicies:
         types: ['PROD']
     policy:
       postAction: prod-post-echo
+      action: pr
   - name: non-prod
     selector:
       targetEnvironment:
