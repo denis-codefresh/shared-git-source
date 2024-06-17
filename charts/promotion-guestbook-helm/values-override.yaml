@@ -1,4 +1,4 @@
-promotionPolicies:
+promotionPolicies: []
   # - name: global
   #   policy:
   #     action: commit
