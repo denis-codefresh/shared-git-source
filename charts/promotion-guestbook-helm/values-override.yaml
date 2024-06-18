@@ -5,7 +5,7 @@ promotionPolicies:
   #     action: commit
 # product policy
   - name: guestbook
-    priority: 0
+    priority: 100
     selector:
       product:
         names: ['guestbook']
@@ -14,7 +14,7 @@ promotionPolicies:
       postAction: guestbook-post-echo
 # envs policy
   - name: non-prod
-    priority: 100
+    priority: 1
     selector:
       targetEnvironment:
         types: ['NON_PROD']
@@ -22,7 +22,7 @@ promotionPolicies:
       postAction: non-prod-post-echo
       action: commit
   - name: prod
-    priority: 100
+    priority: 1
     selector:
       targetEnvironment:
         types: ['PROD']
