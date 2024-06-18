@@ -1,8 +1,8 @@
 promotionPolicies:
 # global policy
-  - name: global
-    policy:
-      action: commit
+  # - name: global
+  #   policy:
+  #     action: commit
 # product policy
   - name: guestbook
     selector:
