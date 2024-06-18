@@ -1,7 +1,7 @@
 promotionPolicies:
 # global policy
   - name: global
-    priority: 1000
+    priority: 500
     policy:
       action: pr
 # product policy
