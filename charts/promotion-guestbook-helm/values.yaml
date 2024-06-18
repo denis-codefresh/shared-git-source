@@ -22,9 +22,9 @@ applications:
       targetRevision: guestbook-prod
 
 promotionPolicies:
-  # - name: global
-  #   policy:
-  #     action: commit
+  - name: global
+    policy:
+      action: commit
   - name: guestbook
     selector:
       product:
