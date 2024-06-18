@@ -1,8 +1,9 @@
 promotionPolicies:
 # global policy
-  # - name: global
-  #   policy:
-  #     action: commit
+  - name: global
+    priority: 1000
+    policy:
+      action: pr
 # product policy
   - name: guestbook
     priority: 100
