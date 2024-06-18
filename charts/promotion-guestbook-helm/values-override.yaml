@@ -5,11 +5,13 @@ promotionPolicies:
   #     action: commit
 # product policy
   - name: guestbook
+    priority: 0
     selector:
       product:
         names: ['guestbook']
     policy:
       preAction: guestbook-pre-echo
+      postAction: guestbook-post-echo
 # envs policy
   - name: non-prod
     priority: 100
