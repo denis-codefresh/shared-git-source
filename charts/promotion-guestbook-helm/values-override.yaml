@@ -1,32 +1,32 @@
 promotionPolicies:
-# global policy
-  - name: global
-    priority: 500
-    policy:
-      action: pr
-# product policy
-  - name: guestbook
-    priority: 100
-    selector:
-      product:
-        names: ['guestbook']
-    policy:
-      preAction: guestbook-pre-echo
-      postAction: guestbook-post-echo
-# envs policy
-  - name: non-prod
-    priority: 1
-    selector:
-      targetEnvironment:
-        types: ['NON_PROD']
-    policy:
-      postAction: non-prod-post-echo
-      action: commit
-  - name: prod
-    priority: 1
-    selector:
-      targetEnvironment:
-        types: ['PROD']
-    policy:
-      postAction: prod-post-echo
-      action: none
+# # global policy
+#   - name: global
+#     priority: 500
+#     policy:
+#       action: pr
+# # product policy
+#   - name: guestbook
+#     priority: 100
+#     selector:
+#       product:
+#         names: ['guestbook']
+#     policy:
+#       preAction: guestbook-pre-echo
+#       postAction: guestbook-post-echo
+# # envs policy
+#   - name: non-prod
+#     priority: 1
+#     selector:
+#       targetEnvironment:
+#         types: ['NON_PROD']
+#     policy:
+#       postAction: non-prod-post-echo
+#       action: commit
+#   - name: prod
+#     priority: 1
+#     selector:
+#       targetEnvironment:
+#         types: ['PROD']
+#     policy:
+#       postAction: prod-post-echo
+#       action: none
