@@ -2,7 +2,7 @@ promotionPolicies:
   - name: global
     policy:
       action: commit
-  - name: global
+  - name: pr-restricted
     selector:
       targetEnvironment:
         names: ['pr-restricted']
