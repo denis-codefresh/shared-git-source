@@ -1,8 +1,10 @@
 promotionPolicies:
   - name: global
+    priority: 1000
     policy:
       action: commit
   - name: pr-restricted
+    priority: 1
     selector:
       targetEnvironment:
         names: ['pr-restricted']
