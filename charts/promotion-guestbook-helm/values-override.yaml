@@ -7,7 +7,7 @@ promotionPolicies:
       targetEnvironment:
         names: ['pr-restricted']
     policy:
-      action: commit
+      action: pr
   - name: guestbook
     selector:
       product:
