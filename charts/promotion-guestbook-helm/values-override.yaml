@@ -2,6 +2,12 @@ promotionPolicies:
   - name: global
     policy:
       action: commit
+  - name: global
+    selector:
+      targetEnvironment:
+        names: ['pr-restricted']
+    policy:
+      action: commit
   - name: guestbook
     selector:
       product:
