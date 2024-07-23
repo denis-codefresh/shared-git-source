@@ -16,7 +16,7 @@ promotionPolicies:
         names: ['guestbook']
     policy:
       preAction: guestbook-pre-echo
-      action: commt
+      action: commit
   - name: prod
     selector:
       targetEnvironment:
