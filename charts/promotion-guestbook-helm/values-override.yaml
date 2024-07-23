@@ -1,21 +1,22 @@
 promotionPolicies:
-  - name: global
-    priority: 1000
-    policy:
-      action: commit
-  - name: pr-restricted
-    priority: 1
-    selector:
-      targetEnvironment:
-        names: ['pr-restricted']
-    policy:
-      action: pr
+  # - name: global
+  #   priority: 1000
+  #   policy:
+  #     action: commit
+  # - name: pr-restricted
+  #   priority: 1
+  #   selector:
+  #     targetEnvironment:
+  #       names: ['pr-restricted']
+  #   policy:
+  #     action: pr
   - name: guestbook
     selector:
       product:
         names: ['guestbook']
     policy:
       preAction: guestbook-pre-echo
+      action: commt
   - name: prod
     selector:
       targetEnvironment:
