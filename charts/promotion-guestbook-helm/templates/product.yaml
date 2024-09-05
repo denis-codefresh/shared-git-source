@@ -1,14 +1,14 @@
-apiVersion: codefresh.io/v1beta1
-kind: Product
-metadata:
-  name: {{ .Values.product.name }}
-  labels:
-    app.kubernetes.io/instance: promotion-guestbook
-spec:
-  promotionFlows:
-    - name: {{ .Values.product.promotionFlow }}
-      gitTriggerSelectors:
-        - key: commitMessage
-          operator: In
-          values:
-            - '[promotion] promote-guestbook*'
+# apiVersion: codefresh.io/v1beta1
+# kind: Product
+# metadata:
+#   name: {{ .Values.product.name }}
+#   labels:
+#     app.kubernetes.io/instance: promotion-guestbook
+# spec:
+#   promotionFlows:
+#     - name: {{ .Values.product.promotionFlow }}
+#       gitTriggerSelectors:
+#         - key: commitMessage
+#           operator: In
+#           values:
+#             - '[promotion] promote-guestbook*'
