@@ -8,6 +8,13 @@ promotionPolicies:
         names: ['guestbook']
     policy:
       preAction: guestbook-pre-echo
+  - name: guestbook-100
+    priority: 100
+    selector:
+      product:
+        names: ['guestbook']
+    policy:
+      preAction: guestbook-pre-echo-100
   # - name: prod
   #   selector:
   #     targetEnvironment:
