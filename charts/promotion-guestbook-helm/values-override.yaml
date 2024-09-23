@@ -15,7 +15,7 @@ promotionPolicies:
         names: ['guestbook']
     policy:
       preAction: guestbook-pre-echo-100
-      postAction: non-prod-post-echo-100
+      postAction: guestbook-pre-echo-100
   - name: non-prod-commit
     selector:
       targetEnvironment:
