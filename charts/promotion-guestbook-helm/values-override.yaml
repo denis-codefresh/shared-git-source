@@ -2,20 +2,20 @@ promotionPolicies:
   # - name: global
   #   policy:
   #     action: commit
-  - name: guestbook
-    selector:
-      product:
-        names: ['guestbook']
-    policy:
-      preAction: guestbook-pre-echo
-  - name: guestbook-100
-    priority: 100
-    selector:
-      product:
-        names: ['guestbook']
-    policy:
-      preAction: guestbook-pre-echo-100
-      postAction: guestbook-pre-echo-100
+  # - name: guestbook
+  #   selector:
+  #     product:
+  #       names: ['guestbook']
+  #   policy:
+  #     preAction: guestbook-pre-echo
+  # - name: guestbook-100
+  #   priority: 100
+  #   selector:
+  #     product:
+  #       names: ['guestbook']
+  #   policy:
+  #     preAction: guestbook-pre-echo-100
+  #     postAction: guestbook-pre-echo-100
   # - name: non-prod-commit
   #   selector:
   #     targetEnvironment:
