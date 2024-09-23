@@ -9,7 +9,7 @@ spec:
   source:
     path: charts/promotion-guestbook-helm
     repoURL: https://github.com/denis-codefresh/shared-git-source.git
-    targetRevision: main
+    targetRevision: sandbox-1
     helm:
       valueFiles:
         - values-override.yaml
