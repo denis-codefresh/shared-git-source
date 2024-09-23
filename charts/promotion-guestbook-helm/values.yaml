@@ -43,3 +43,24 @@ promotionPolicies:
         types: ['NON_PROD']
     policy:
       postAction: non-prod-post-echo
+
+
+flows:
+  # verify PP is resolved
+  - name: basic
+    steps:
+      - name: dev
+      - name: pre-prod
+      - name: prod
+  # verify PP is resolved
+  - name: 
+    steps:
+      - name: dev
+        policy:
+          preAction: defined
+      - name: pre-prod
+        policy:
+          postAction: defined
+      - name: prod
+        policy:
+          action: defined
