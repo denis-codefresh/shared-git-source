@@ -16,12 +16,12 @@ promotionPolicies:
     policy:
       preAction: guestbook-pre-echo-100
       postAction: guestbook-pre-echo-100
-  - name: non-prod-commit
-    selector:
-      targetEnvironment:
-        types: ['NON_PROD']
-    policy:
-      action: commit
+  # - name: non-prod-commit
+  #   selector:
+  #     targetEnvironment:
+  #       types: ['NON_PROD']
+  #   policy:
+  #     action: commit
   # - name: prod
   #   selector:
   #     targetEnvironment:
