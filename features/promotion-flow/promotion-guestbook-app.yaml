@@ -1,11 +1,14 @@
-# dev, pre-prod, prod
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: promotion-guestbook
+  annotations:
+    codefresh.io/app-group: test
 spec:
   project: default
+  destination:
+    name: in-cluster
+    namespace: codefresh
   source:
     path: charts/promotion-guestbook-helm
     repoURL: https://github.com/denis-codefresh/shared-git-source.git
@@ -13,9 +16,6 @@ spec:
     helm:
       valueFiles:
         - values-override.yaml
-  destination:
-    name: in-cluster
-    namespace: codefresh
   syncPolicy:
     automated:
       prune: true
